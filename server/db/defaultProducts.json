@@ -1,0 +1,31 @@
+[
+  {
+    "_id": {
+      "$oid": "61cb4fb6558c07caf9a7bd41"
+    },
+    "genus": "Monstera",
+    "price": 17.99
+  },
+  {
+    "_id": {
+      "$oid": "61cb4fbf558c07caf9a7bd42"
+    },
+    "genus": "Codiaeum",
+    "price": 14.99
+  },
+  {
+    "_id": {
+      "$oid": "61cb4fd3558c07caf9a7bd43"
+    },
+    "genus": "Tillandsia Cyanea",
+    "price": 4.5
+  },
+  {
+    "_id": {
+      "$oid": "61cb4fd3558c07caf9a7bd44"
+    },
+
+    "genus": "Cycas Revoluta",
+    "price": 24.99
+  }
+]

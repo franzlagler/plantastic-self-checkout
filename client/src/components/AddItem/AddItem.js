@@ -1,9 +1,9 @@
-import { RoundButton, PopupContainer, PopupWindow } from "../Miscellaneous";
 import { Scanner } from "./Scanner";
 import { useEffect, useState } from "react";
 import { FoundProduct } from "./FoundProduct";
 import { addItemToCookie } from "../../utils/cookies";
 import { Error } from "./Error";
+import { Popup } from "../Popup";
 const Quagga = require("quagga");
 
 export const AddItem = ({ setShowPopup, setBasketCookie }) => {
@@ -23,7 +23,7 @@ export const AddItem = ({ setShowPopup, setBasketCookie }) => {
 
   const handleCloseClick = () => {
     Quagga.stop();
-    setShowPopup({ addItem: false, help: false });
+    setShowPopup((prev) => ({ ...prev, addItem: false }));
     setContent(defaultSettings);
   };
 
@@ -49,22 +49,23 @@ export const AddItem = ({ setShowPopup, setBasketCookie }) => {
   }, [foundProduct]);
 
   return (
-    <PopupContainer>
-      <PopupWindow>
-        <RoundButton image="close" onClick={handleCloseClick} />
-        {content.scanner && (
-          <Scanner setFoundProduct={setFoundProduct} setContent={setContent} />
-        )}
-        {content.foundItem && (
-          <FoundProduct
-            givenProductName={givenProductName}
-            handleNameInput={handleNameInput}
-            foundProduct={foundProduct}
-            handleAddClick={handleAddClick}
-          />
-        )}
-        {content.error && <Error handleScanClick={handleScanClick} />}
-      </PopupWindow>
-    </PopupContainer>
+    <Popup handleCloseClick={handleCloseClick}>
+      {content.scanner && (
+        <Scanner
+          setFoundProduct={setFoundProduct}
+          setContent={setContent}
+          aria-label="Scanner for Barcodes"
+        />
+      )}
+      {content.foundItem && (
+        <FoundProduct
+          givenProductName={givenProductName}
+          handleNameInput={handleNameInput}
+          foundProduct={foundProduct}
+          handleAddClick={handleAddClick}
+        />
+      )}
+      {content.error && <Error handleScanClick={handleScanClick} />}
+    </Popup>
   );
 };

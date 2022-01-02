@@ -51,7 +51,10 @@ function App() {
     <>
       <GlobalStyle />
       <GridContainer>
-        <HeroImage src={`${process.env.PUBLIC_URL}/hero.jpg`} />
+        <HeroImage
+          src={`${process.env.PUBLIC_URL}/hero.jpg`}
+          alt="Hero Image"
+        />
         <Elements stripe={promise}>
           <Main>
             <Router>

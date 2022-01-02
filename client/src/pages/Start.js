@@ -1,5 +1,11 @@
 import styled from "styled-components";
-import { Icon, Paragraph, PageLink } from "../components/Miscellaneous";
+import {
+  Icon,
+  Paragraph,
+  PageLink,
+  ParagraphContainer,
+  Logo,
+} from "../components/Miscellaneous";
 
 const StartContainer = styled.div`
   height: inherit;
@@ -8,11 +14,6 @@ const StartContainer = styled.div`
   align-content: space-between;
 `;
 
-const CheckoutImage = styled.img`
-  width: 350px;
-  height: auto;
-  margin: 0 auto;
-`;
 const BottomContainer = styled.div`
   margin: 0 auto;
   display: grid;
@@ -23,14 +24,16 @@ const BottomContainer = styled.div`
 export const Start = (props) => {
   return (
     <StartContainer>
-      <CheckoutImage src={`${process.env.PUBLIC_URL}/logo.svg`} />
+      <Logo src={`${process.env.PUBLIC_URL}/logo.svg`} alt="Logo" />
       <BottomContainer>
-        <Paragraph>
-          Use our self-checkout system to purchase your plants. In order to get
-          started, simply press the Start Button below.{" "}
-        </Paragraph>
+        <ParagraphContainer>
+          <Paragraph>
+            Use our self-checkout system to purchase your plants. In order to
+            get started, simply press the Start Button below.{" "}
+          </Paragraph>
+        </ParagraphContainer>
         <PageLink to="/basket">
-          <Icon src={`${process.env.PUBLIC_URL}/bag.svg`} />
+          <Icon src={`${process.env.PUBLIC_URL}/bag.svg`} alt="Start" />
           Start
         </PageLink>
       </BottomContainer>

@@ -87,7 +87,7 @@ export const Basket = () => {
             handleDeleteProduct={handleDeleteProduct}
           />
           <RegularButton onClick={handleScanClick}>
-            <Icon src={`${process.env.PUBLIC_URL}/scan.svg`} />
+            <Icon src={`${process.env.PUBLIC_URL}/scan.svg`} alt="Scan" />
             Scan
           </RegularButton>
         </TopContainer>
@@ -95,7 +95,7 @@ export const Basket = () => {
           <HorizontalRuler />
           <TotalPrice>Total: {getTotalPrice(productDetails)}€</TotalPrice>
           <RegularButton onClick={handlePayClick} disabled={disablePayLink}>
-            <Icon src={`${process.env.PUBLIC_URL}/pay.svg`} />
+            <Icon src={`${process.env.PUBLIC_URL}/pay.svg`} alt="Pay" />
             Pay
           </RegularButton>
         </BottomContainer>

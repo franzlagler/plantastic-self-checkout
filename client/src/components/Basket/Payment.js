@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import { getTotalPrice } from "../../utils/price";
 import {
-  RoundButton,
-  PopupContainer,
-  PopupWindow,
   RegularButton,
   Icon,
   Label,
@@ -20,6 +17,7 @@ import {
 import { useEffect, useState } from "react";
 import { fetchClientSecret } from "../../utils/fetchRequests";
 import { useNavigate } from "react-router-dom";
+import { Popup } from "../Popup";
 
 const PaymentContainer = styled.div`
   width: 100%;
@@ -86,48 +84,40 @@ export const Payment = ({ basketCookie, productDetails, setShowPopup }) => {
   }, [basketCookie]);
 
   return (
-    <>
-      <PopupContainer>
-        <PopupWindow>
-          <RoundButton image="close" onClick={handleCloseClick} />
-          <PaymentContainer>
-            <Heading2>Payment</Heading2>
-            <Paragraph>
-              Please fill in your card details to finish the purchase.
-            </Paragraph>
-            <div>
-              <Label htmlFor="cardNumber">Card Number</Label>
+    <Popup handleCloseClick={handleCloseClick}>
+      <PaymentContainer>
+        <Heading2>Payment</Heading2>
+        <Paragraph>
+          Please fill in your card details to finish the purchase.
+        </Paragraph>
+        <div>
+          <Label htmlFor="cardNumber">Card Number</Label>
 
-              <BorderContainer>
-                <CardNumberElement id="cardNumber" options={CardNumberStyle} />
-              </BorderContainer>
-            </div>
-            <GridContainer>
-              <div>
-                <Label htmlFor="expiryDate">Expiry Date</Label>
+          <BorderContainer>
+            <CardNumberElement id="cardNumber" options={CardNumberStyle} />
+          </BorderContainer>
+        </div>
+        <GridContainer>
+          <div>
+            <Label htmlFor="expiryDate">Expiry Date</Label>
 
-                <BorderContainer>
-                  <CardExpiryElement
-                    id="expiryDate"
-                    options={CardNumberStyle}
-                  />
-                </BorderContainer>
-              </div>
-              <div>
-                <Label htmlFor="cvc">CVC</Label>
-                <BorderContainer>
-                  <CardCvcElement id="cvc" options={CardNumberStyle} />
-                </BorderContainer>
-              </div>
-            </GridContainer>
-            <Heading2>Due Amount: {getTotalPrice(productDetails)}€</Heading2>
-            <RegularButton disabled={disableButton} onClick={handlePayNowClick}>
-              <Icon src={`${process.env.PUBLIC_URL}/pay.svg`} />
-              Pay Now
-            </RegularButton>
-          </PaymentContainer>
-        </PopupWindow>
-      </PopupContainer>
-    </>
+            <BorderContainer>
+              <CardExpiryElement id="expiryDate" options={CardNumberStyle} />
+            </BorderContainer>
+          </div>
+          <div>
+            <Label htmlFor="cvc">CVC</Label>
+            <BorderContainer>
+              <CardCvcElement id="cvc" options={CardNumberStyle} />
+            </BorderContainer>
+          </div>
+        </GridContainer>
+        <Heading2>Due Amount: {getTotalPrice(productDetails)}€</Heading2>
+        <RegularButton disabled={disableButton} onClick={handlePayNowClick}>
+          <Icon src={`${process.env.PUBLIC_URL}/pay.svg`} />
+          Pay Now
+        </RegularButton>
+      </PaymentContainer>
+    </Popup>
   );
 };

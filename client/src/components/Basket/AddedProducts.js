@@ -52,6 +52,7 @@ export const AddedProducts = ({ productDetails, handleDeleteProduct }) => {
             <SingleProductContainer key={product.keyword}>
               <SingleProductImage
                 src={`${process.env.PUBLIC_URL}/${product.keyword}.svg`}
+                alt="Product Image"
               />
               <SingleProductDescription>
                 <div>
@@ -72,6 +73,7 @@ export const AddedProducts = ({ productDetails, handleDeleteProduct }) => {
                 image="close"
                 id={product.barcode}
                 onClick={handleDeleteProduct}
+                aria-label="Delete Item"
               />
             </SingleProductContainer>
           );

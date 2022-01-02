@@ -25,7 +25,7 @@ export const RegularButton = styled.button`
   }
 `;
 
-export const RoundButton = styled.button`
+export const SmallButton = styled.button`
   position: absolute;
   top: 20px;
   right: 20px;
@@ -45,7 +45,7 @@ export const RoundButton = styled.button`
 export const DeleteButton = styled.button`
   width: 36px;
   height: 36px;
-  background-color: #ced4da;
+  background-color: #ff8fa3;
   background-image: ${(props) =>
     "url(" + process.env.PUBLIC_URL + "/" + props.image + ".svg)"};
   background-position: center center;
@@ -79,6 +79,12 @@ export const PageLink = styled(Link)`
 
 // Image Elements
 
+export const Logo = styled.img`
+  width: 350px;
+  height: auto;
+  margin: 0 auto 20px auto;
+`;
+
 export const Icon = styled.img`
   width: 30px;
   height: auto;
@@ -111,29 +117,10 @@ export const TextField = styled.input.attrs({ type: "text" })`
 
 // Container Elements
 
-export const PopupContainer = styled.div`
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(33, 37, 41, 0.5);
+export const ParagraphContainer = styled.div`
+  max-width: 600px;
+  margin: 0 auto;
 `;
-
-export const PopupWindow = styled.div`
-  position: relative;
-  width: 400px;
-  min-height: 560px;
-  padding: 80px 40px 40px 40px;
-  display: grid;
-  justify-content: center;
-  background-color: #fff;
-  border-radius: 15px;
-`;
-
 // Text Elements
 
 export const Heading1 = styled.h1`

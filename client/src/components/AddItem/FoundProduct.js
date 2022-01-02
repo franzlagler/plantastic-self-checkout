@@ -53,7 +53,10 @@ export const FoundProduct = ({
         </Paragraph>
       </div>
 
-      <ProductImage src={`${process.env.PUBLIC_URL}/${keyword}.svg`} />
+      <ProductImage
+        src={`${process.env.PUBLIC_URL}/${keyword}.svg`}
+        alt="Product"
+      />
 
       <Price>Price: {price.toFixed(2)}€</Price>
       <RegularButton onClick={handleAddClick}>

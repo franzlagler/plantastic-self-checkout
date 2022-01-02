@@ -20,7 +20,7 @@ const ErrorMessage = styled.p`
 export const Error = ({ handleScanClick }) => {
   return (
     <ErrorContainer>
-      <ErrorImage src={`${process.env.PUBLIC_URL}/error.svg`} />
+      <ErrorImage src={`${process.env.PUBLIC_URL}/error.svg`} alt="Error" />
       <ErrorMessage>
         The used barcode does not exist in our database.
       </ErrorMessage>
@@ -29,7 +29,7 @@ export const Error = ({ handleScanClick }) => {
       </Paragraph>
 
       <RegularButton onClick={handleScanClick}>
-        <Icon src={`${process.env.PUBLIC_URL}/scan.svg`} />
+        <Icon src={`${process.env.PUBLIC_URL}/scan.svg`} alt="Scan Item" />
         Scan
       </RegularButton>
     </ErrorContainer>

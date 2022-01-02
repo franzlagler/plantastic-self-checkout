@@ -27,11 +27,14 @@ export const scanBarcode = (setFoundProduct, setContent) => {
   Quagga.onDetected(async (data) => {
     Quagga.stop();
     const barcode = data.codeResult.code;
-    const res = await fetch("http://localhost:4000/findProduct", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ barcode }),
-    });
+    const res = await fetch(
+      "https://plantastic-server.herokuapp.com/findProduct",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ barcode }),
+      }
+    );
     const response = await res.json();
     if (response.product) {
       setFoundProduct(response.product);

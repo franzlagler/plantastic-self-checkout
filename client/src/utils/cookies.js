@@ -9,7 +9,11 @@ export const getCookie = (key) => {
 };
 
 export const setCookie = (key, value) => {
-  Cookies.set(key, JSON.stringify(value), { expires: 0.5 });
+  Cookies.set(key, JSON.stringify(value), {
+    expires: 0.5,
+    sameSite: "Lax",
+    secure: true,
+  });
 };
 
 export const addItemToCookie = (key, newInput) => {

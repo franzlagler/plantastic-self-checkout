@@ -8,6 +8,7 @@ const { getAddedProductDetails } = require("../utils/products");
 const productRoutes = express.Router();
 
 productRoutes.route("/findProduct").post(async (req, res) => {
+  console.log(req.body.barcode);
   const productBarcodeEntry = await getProductIdFromBarcode(req.body.barcode);
   if (productBarcodeEntry) {
     const product = await getOneProduct(productBarcodeEntry.productId);

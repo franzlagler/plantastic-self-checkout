@@ -6,9 +6,10 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 paymentRoutes.route("/create-payment-intent").post(async (req, res) => {
   const basketCookie = req.body.basketCookie;
-  const total = getTotalPrice(basketCookie);
+  const total = await getTotalPrice(basketCookie);
+  console.log(total);
 
-  const paymentIntent = await stripe.paymentIntent.create({
+  const paymentIntent = await stripe.paymentIntents.create({
     amount: total,
     currency: "eur",
   });

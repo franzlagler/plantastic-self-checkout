@@ -14,7 +14,7 @@ const ProductContainer = styled.div`
 `;
 
 const ProductImage = styled.img`
-  width: 150px;
+  width: 120px;
   height: auto;
   margin: 10px auto;
 `;
@@ -33,8 +33,6 @@ export const FoundProduct = ({
   const { barcode, price, genus, keyword } = foundProduct;
   return (
     <ProductContainer>
-      <ProductImage src={`${process.env.PUBLIC_URL}/${keyword}.svg`} />
-
       <div>
         <Label htmlFor="name">Name</Label>
         <TextField
@@ -54,6 +52,8 @@ export const FoundProduct = ({
           {barcode}
         </Paragraph>
       </div>
+
+      <ProductImage src={`${process.env.PUBLIC_URL}/${keyword}.svg`} />
 
       <Price>Price: {price.toFixed(2)}€</Price>
       <RegularButton onClick={handleAddClick}>

@@ -14,7 +14,6 @@ const CheckoutImage = styled.img`
   margin: 0 auto;
 `;
 const BottomContainer = styled.div`
-  width: 70%;
   margin: 0 auto;
   display: grid;
   justify-content: center;

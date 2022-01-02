@@ -13,6 +13,7 @@ import { Icon } from "../components/Miscellaneous";
 import { fetchProductDetails } from "../utils/fetchRequests";
 import { AddedProducts } from "../components/Basket/AddedProducts";
 import { getTotalPrice } from "../utils/price";
+import { Payment } from "../components/Basket/Payment";
 
 const BasketContainer = styled.div`
   width: 100%;
@@ -39,8 +40,12 @@ const TotalPrice = styled.p`
 
 export const Basket = () => {
   const [basketCookie, setBasketCookie] = useState([]);
-  const [showPopup, setShowPopup] = useState({ addItem: false, help: false });
+  const [showPopup, setShowPopup] = useState({
+    addItem: false,
+    payment: false,
+  });
   const [productDetails, setProductDetails] = useState([]);
+  const [disablePayLink, setDisablePayLink] = useState(true);
 
   const handleScanClick = () => {
     setShowPopup((prev) => ({ ...prev, addItem: true }));
@@ -52,6 +57,10 @@ export const Basket = () => {
     setBasketCookie(updatedCookie);
   };
 
+  const handlePayClick = () => {
+    setShowPopup((prev) => ({ ...prev, payment: true }));
+  };
+
   useEffect(() => {
     if (!getCookie("basket")) {
       setCookie("basket", []);
@@ -61,6 +70,9 @@ export const Basket = () => {
   }, []);
 
   useEffect(() => {
+    if (basketCookie.length > 0) {
+      setDisablePayLink(false);
+    }
     fetchProductDetails(basketCookie, setProductDetails);
   }, [basketCookie]);
   return (
@@ -82,19 +94,24 @@ export const Basket = () => {
         </TopContainer>
         <BottomContainer>
           <HorizontalRuler />
-          <TotalPrice>
-            Total: {getTotalPrice(productDetails).toFixed(2)}€
-          </TotalPrice>
-          <PageLink to="/payment">
+          <TotalPrice>Total: {getTotalPrice(productDetails)}€</TotalPrice>
+          <RegularButton onClick={handlePayClick} disabled={disablePayLink}>
             <Icon src={`${process.env.PUBLIC_URL}/pay.svg`} />
             Pay
-          </PageLink>
+          </RegularButton>
         </BottomContainer>
       </BasketContainer>
       {showPopup.addItem && (
         <AddItem
           setShowPopup={setShowPopup}
           setBasketCookie={setBasketCookie}
+        />
+      )}
+      {showPopup.payment && (
+        <Payment
+          basketCookie={basketCookie}
+          productDetails={productDetails}
+          setShowPopup={setShowPopup}
         />
       )}
     </>

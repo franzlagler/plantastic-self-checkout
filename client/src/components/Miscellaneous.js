@@ -18,6 +18,11 @@ export const RegularButton = styled.button`
   font-size: 20px;
   font-weight: 600;
   cursor: pointer;
+
+  &:disabled {
+    background-color: #dee2e6;
+    opacity: 0.5;
+  }
 `;
 
 export const RoundButton = styled.button`
@@ -40,7 +45,7 @@ export const RoundButton = styled.button`
 export const DeleteButton = styled.button`
   width: 36px;
   height: 36px;
-  background-color: #ff8fa3;
+  background-color: #ced4da;
   background-image: ${(props) =>
     "url(" + process.env.PUBLIC_URL + "/" + props.image + ".svg)"};
   background-position: center center;
@@ -85,12 +90,12 @@ export const Label = styled.label`
   display: block;
   font-size: 20px;
   font-weight: 600;
+  margin-bottom: 5px;
 `;
 
 export const TextField = styled.input.attrs({ type: "text" })`
   width: 300px;
   height: 50px;
-  margin-top: 5px;
   padding: 0 5px;
   border: 3px solid #212529;
   border-radius: 10px;
@@ -122,7 +127,7 @@ export const PopupWindow = styled.div`
   position: relative;
   width: 400px;
   min-height: 560px;
-  padding: 80px 40px;
+  padding: 80px 40px 40px 40px;
   display: grid;
   justify-content: center;
   background-color: #fff;
@@ -135,6 +140,12 @@ export const Heading1 = styled.h1`
   font-size: 50px;
   font-weight: 700;
   text-align: center;
+`;
+
+export const Heading2 = styled.h2`
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 5px;
 `;
 
 export const Paragraph = styled.p`

@@ -18,8 +18,8 @@ const LiveStreamContainer = styled.div`
 
 export const Scanner = ({ setFoundProduct, setContent }) => {
   useEffect(() => {
-    const response = scanBarcode(setFoundProduct, setContent);
-  }, []);
+    scanBarcode(setFoundProduct, setContent);
+  }, [setFoundProduct, setContent]);
   return (
     <ScannerContainer>
       <LiveStreamContainer id="livestream" />

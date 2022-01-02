@@ -2,7 +2,6 @@ import styled from "styled-components";
 import {
   Heading1,
   HorizontalRuler,
-  PageLink,
   Paragraph,
   RegularButton,
 } from "../components/Miscellaneous";

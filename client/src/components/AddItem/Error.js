@@ -17,12 +17,6 @@ const ErrorMessage = styled.p`
   font-weight: 600;
 `;
 
-const List = styled.ul``;
-
-const ListItem = styled.li`
-  font-size: 20px;
-`;
-
 export const Error = ({ handleScanClick }) => {
   return (
     <ErrorContainer>

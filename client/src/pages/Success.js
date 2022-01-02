@@ -26,7 +26,7 @@ export const Success = () => {
     setTimeout(() => {
       navigate("/");
     }, 30000);
-  }, []);
+  }, [navigate]);
   return (
     <SuccessContainer>
       <TopContainer>

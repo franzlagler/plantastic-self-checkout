@@ -59,8 +59,8 @@ const CardNumberStyle = {
 export const Payment = ({ basketCookie, productDetails, setShowPopup }) => {
   const [clientSecret, setClientSecret] = useState("");
   const [disableButton, setDisableButton] = useState(true);
-  const [payButtonContent, setPayButtonContent] = useState("Pay Now");
-
+  /*   const [payButtonContent, setPayButtonContent] = useState("Pay Now");
+   */
   const navigate = useNavigate("/success");
   const stripe = useStripe();
   const elements = useElements();
@@ -83,7 +83,7 @@ export const Payment = ({ basketCookie, productDetails, setShowPopup }) => {
   useEffect(() => {
     fetchClientSecret(basketCookie, setClientSecret);
     setDisableButton(false);
-  }, []);
+  }, [basketCookie]);
 
   return (
     <>

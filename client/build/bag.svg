@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
+    <g id="Bag" transform="matrix(1.11543,0,0,1.1037,-1.84687,-1.65927)">
+        <path d="M22.315,29L9.685,29C8.156,29 6.872,27.851 6.703,26.331L5,11L27,11L25.297,26.331C25.128,27.851 23.844,29 22.315,29Z" style="fill:none;fill-rule:nonzero;stroke:rgb(33,37,41);stroke-width:2px;"/>
+        <path d="M11,15L11,8C11,5.239 13.239,3 16,3C18.761,3 21,5.239 21,8L21,15" style="fill:none;fill-rule:nonzero;stroke:rgb(33,37,41);stroke-width:2px;"/>
+        <path d="M10,15L12,15" style="fill:none;fill-rule:nonzero;stroke:rgb(33,37,41);stroke-width:2px;"/>
+        <path d="M20,15L22,15" style="fill:none;fill-rule:nonzero;stroke:rgb(33,37,41);stroke-width:2px;"/>
+        <path d="M13,22L16,24L20,19" style="fill:none;fill-rule:nonzero;stroke:rgb(33,37,41);stroke-width:2px;"/>
+    </g>
+</svg>

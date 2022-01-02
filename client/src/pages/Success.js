@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import {
-  Heading1,
   Heading2,
   Icon,
   Logo,

@@ -73,7 +73,6 @@ const LoadingAnimation = styled.img`
 export const Payment = ({ basketCookie, productDetails, setShowPopup }) => {
   const [clientSecret, setClientSecret] = useState("");
   const [disablePayButton, setDisablePayButton] = useState(true);
-  const [payButtonContent, setPayButtonContent] = useState("Pay Now");
 
   const navigate = useNavigate();
   const stripe = useStripe();

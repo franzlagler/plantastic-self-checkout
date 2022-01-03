@@ -21,25 +21,39 @@ const GlobalStyle = createGlobalStyle`
 const GridContainer = styled.div`
   width: 100%;
   height: 100vh;
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 1fr;
-  grid-template-areas: "hero main";
+  display: flex;
 `;
 
 const HeroImage = styled.img`
   position: fixed;
-  grid-area: hero;
   width: 50%;
   height: 100%;
   object-fit: cover;
+  @media (max-width: 1100px) {
+    width: 25%;
+  }
+
+  @media (max-width: 900px) {
+    width: 0%;
+  }
 `;
 
 const Main = styled.main`
-  width: 100%;
+  position: relative;
+  width: 50%;
+  left: 50%;
   height: 100%;
-  grid-area: main;
   padding: 50px;
+  @media (max-width: 1100px) {
+    left: 25%;
+    width: 75%;
+  }
+
+  @media (max-width: 900px) {
+    left: 0px;
+
+    width: 100%;
+  }
 `;
 
 const promise = loadStripe(

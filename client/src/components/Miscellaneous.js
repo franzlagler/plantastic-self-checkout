@@ -117,6 +117,10 @@ export const TextField = styled.input.attrs({ type: "text" })`
 
 // Container Elements
 
+export const FieldContainer = styled.div`
+  margin-bottom: 10px;
+`;
+
 export const ParagraphContainer = styled.div`
   max-width: 600px;
   margin: 0 auto;

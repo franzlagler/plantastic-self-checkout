@@ -10,6 +10,7 @@ export const scanBarcode = (setFoundProduct, setContent) => {
         constraints: {
           width: 320,
           height: 240,
+          facingMode: "environment",
         },
       },
       decoder: {

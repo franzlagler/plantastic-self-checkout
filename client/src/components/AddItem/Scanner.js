@@ -9,11 +9,19 @@ const ScannerContainer = styled.div`
 `;
 
 const LiveStreamContainer = styled.div`
-  width: 320px;
-  height: 240px;
   border: 3px solid #212529;
+  height: 240px;
   border-radius: 15px;
   overflow: hidden;
+  &::ng-deep video {
+    width: 100%;
+  }
+  ::ng-deep canvas {
+    position: absolute;
+    z-index: 1000;
+    right: 0;
+    width: 100%;
+  }
 `;
 
 export const Scanner = ({ setFoundProduct, setContent }) => {

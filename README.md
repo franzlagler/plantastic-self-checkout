@@ -11,8 +11,8 @@ The self-checkout system of the fictional company Plantastic allows you to easil
 
 ## Project Procedure
 
-- Create a To Do List with Trello ()
-- Create Wireframes of the rough structure of the UI ()
+- Create a To Do List with Trello ([Link](https://trello.com/b/5qOJnlKa/plantastic-self-checkout-store))
+- Create Wireframes of the rough structure of the UI ([Link](https://www.figma.com/file/NOXGrbegtRB5uDlV6Vs3ZN/Plantastic-Self-Checkout?node-id=0%3A1))
 - Create skeleton folders of the frontend (React) and backend (Node, Express, MongoDB)
 - Create database via MongoDB Atlas
 - Add required collections and items

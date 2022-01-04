@@ -1,10 +1,5 @@
 import styled from "styled-components";
-import {
-  Paragraph,
-  BoldText,
-  DeleteButton,
-  SmallButton,
-} from "../Miscellaneous";
+import { Paragraph, BoldText, DeleteButton } from "../Miscellaneous";
 
 // General Styles
 

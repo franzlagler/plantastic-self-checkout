@@ -16,6 +16,7 @@ const LiveStreamContainer = styled.div`
   overflow: hidden;
   &::ng-deep video {
     width: 100%;
+    border-radius: 15px;
   }
   ::ng-deep canvas {
     position: absolute;

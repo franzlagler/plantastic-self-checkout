@@ -1,5 +1,10 @@
 import styled from "styled-components";
-import { Paragraph, BoldText, DeleteButton } from "../Miscellaneous";
+import {
+  Paragraph,
+  BoldText,
+  DeleteButton,
+  SmallButton,
+} from "../Miscellaneous";
 
 // General Styles
 
@@ -29,12 +34,10 @@ const RegularSingleProductContainer = styled.div`
   max-width: 800px;
   height: 180px;
   margin: 0 auto;
-  padding: 5px 0;
+  padding: 10px;
   background-color: #fff;
-  border-bottom: 2px solid #212529;
-  &:last-of-type {
-    border-bottom: none;
-  }
+  border: 2px solid #212529;
+  border-radius: 15px;
 
   @media (max-width: 500px) {
     display: none;
@@ -88,12 +91,11 @@ export const RegularSingleProduct = ({
 const MobileSingleProductContainer = styled.div`
   position: relative;
   display: grid;
-  grid-gap: 10px;
-  padding: 20px 0;
-  border-bottom: 2px solid #212529;
-  &:last-of-type {
-    border-bottom: none;
-  }
+  grid-template-columns: 1fr 50px;
+  grid-template-rows: 1fr;
+  padding: 20px;
+  border: 2px solid #212529;
+  border-radius: 15px;
 
   @media (min-width: 501px) {
     display: none;
@@ -106,26 +108,37 @@ const MobileSingleProductImage = styled.img`
   margin: 0 auto;
 `;
 
-export const MobileSingleProduct = ({ productDetails }) => {
+export const MobileSingleProduct = ({
+  productDetails,
+  handleDeleteProduct,
+}) => {
   return productDetails.map((product) => {
     return (
       <MobileSingleProductContainer>
-        <SingleProductDescription>
-          <div>
-            <SingleProductName>{product.name}</SingleProductName>
-            <SingleProductSecondaryInformation>
-              Genus: {product.genus}
-            </SingleProductSecondaryInformation>
-            <SingleProductSecondaryInformation>
-              EAN: {product.barcode}
-            </SingleProductSecondaryInformation>
-          </div>
-        </SingleProductDescription>
-        <MobileSingleProductImage
-          src={`${process.env.PUBLIC_URL}/${product.keyword}.svg`}
-          alt="Product Image"
+        <div>
+          <SingleProductDescription>
+            <div>
+              <SingleProductName>{product.name}</SingleProductName>
+              <SingleProductSecondaryInformation>
+                Genus: {product.genus}
+              </SingleProductSecondaryInformation>
+              <SingleProductSecondaryInformation>
+                EAN: {product.barcode}
+              </SingleProductSecondaryInformation>
+            </div>
+          </SingleProductDescription>
+          <MobileSingleProductImage
+            src={`${process.env.PUBLIC_URL}/${product.keyword}.svg`}
+            alt="Product Image"
+          />
+          <Paragraph bold>Price: {product.price.toFixed(2)}€</Paragraph>
+        </div>
+        <DeleteButton
+          image="close"
+          id={product.barcode}
+          onClick={handleDeleteProduct}
+          aria-label="Delete Item"
         />
-        <Paragraph bold>Price: {product.price.toFixed(2)}€</Paragraph>
       </MobileSingleProductContainer>
     );
   });

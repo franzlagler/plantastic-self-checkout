@@ -23,11 +23,11 @@ const PopupWindow = styled.div`
   background-color: #fff;
   border-radius: 15px;
 
-  @media (max-width: 800px) {
+  @media (max-width: 500px) {
     width: 100%;
     margin: 0 20px;
     min-height: 500px;
-    padding: 80px 20px 40px 20px;
+    padding: 80px 10px 40px 10px;
   }
 `;
 

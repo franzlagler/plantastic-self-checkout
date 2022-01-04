@@ -25,7 +25,7 @@ const GridContainer = styled.div`
 `;
 
 const HeroImage = styled.img`
-  position: fixed;
+  position: sticky;
   width: 50%;
   height: 100%;
   object-fit: cover;
@@ -39,20 +39,20 @@ const HeroImage = styled.img`
 `;
 
 const Main = styled.main`
-  position: relative;
   width: 50%;
   left: 50%;
   height: 100%;
   padding: 50px;
   @media (max-width: 1100px) {
-    left: 25%;
     width: 75%;
   }
 
   @media (max-width: 900px) {
-    left: 0px;
-
     width: 100%;
+  }
+
+  @media (max-width: 500px) {
+    padding: 30px 20px;
   }
 `;
 

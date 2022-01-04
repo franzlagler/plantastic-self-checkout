@@ -100,7 +100,7 @@ export const Label = styled.label`
 `;
 
 export const TextField = styled.input.attrs({ type: "text" })`
-  width: 300px;
+  width: 100%;
   height: 50px;
   padding: 0 5px;
   border: 3px solid #212529;

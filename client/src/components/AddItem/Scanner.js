@@ -23,6 +23,7 @@ const LiveStreamContainer = styled.div`
     z-index: 1000;
     right: 0;
     width: 100%;
+    border-radius: 15px;
   }
 `;
 

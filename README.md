@@ -43,3 +43,8 @@ The self-checkout system of the fictional company Plantastic allows you to easil
 - You can also try out non-existing ones to see how the app reacts to them
 
 ## Screenshots
+
+![To Do List](client/public/screenshots/ToDoList.png)
+![Wireframes](client/public/screenshots/Wireframes.png)
+![Desktop Version](client/public/screenshots/DesktopVersion.svg)
+![Mobile Version](client/public/screenshots/MobileVersion.svg)

@@ -10,6 +10,7 @@ const ScannerContainer = styled.div`
 
 const LiveStreamContainer = styled.div`
   border: 3px solid #212529;
+  width: auto;
   height: 240px;
   border-radius: 15px;
   overflow: hidden;

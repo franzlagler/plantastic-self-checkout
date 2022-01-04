@@ -8,8 +8,6 @@ export const scanBarcode = (setFoundProduct, setContent) => {
         type: "LiveStream",
         target: document.querySelector("#livestream"),
         constraints: {
-          width: 320,
-          height: 240,
           facingMode: "environment",
         },
       },
